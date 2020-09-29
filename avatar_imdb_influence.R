@@ -21,7 +21,7 @@ get_words_per_rating <- function(person){
   dat <- filter(avatar, character == person)
 
   words <- dat$CharWords[which(avatar$chapter_num != dplyr::lag(dat$chapter_num))]
-  ratings <- dat$delta[which(avatar$chapter_num != dplyr::lag(dat$chapter_num))]
+  ratings <- dat$imdb_rating[which(avatar$chapter_num != dplyr::lag(dat$chapter_num))]
   
   words_rating <- data.frame(words, ratings)
   words_rating <- unique(words_rating)
