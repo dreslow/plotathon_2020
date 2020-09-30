@@ -1,5 +1,4 @@
 library(tidyverse)
-library(rlist)
 library(ggplot2)
 
 tuesdata <- tidytuesdayR::tt_load('2020-08-11')
@@ -58,6 +57,8 @@ influence %>%
   ggplot(aes(fct_rev(fct_reorder(chars,coeffs)),coeffs))+
   geom_col(fill = colors)+
   scale_fill_manual(values = colors)+
+  ggtitle("Influence of Words Spoken by Characters on IMDb Rating")+
   theme_classic()+
   xlab("Character")+
   ylab("Influence")
+

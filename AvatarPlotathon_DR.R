@@ -93,7 +93,7 @@ none <- c('Sokka')
 
 g <- graph_from_data_frame(d=edges, vertices=nodes, directed=FALSE)
 g[]
-V(g)$size <- log(strength(g))*2+2
+V(g)$size <- log(strength(g))*2+3
 V(g)$color <- NA
 V(g)$color[V(g)$name %in% fire] <- "red"
 V(g)$color[V(g)$name %in% water] <- "blue"
@@ -101,9 +101,8 @@ V(g)$color[V(g)$name %in% earth] <- "green"
 V(g)$color[V(g)$name %in% none] <- "grey"
 V(g)$color[V(g)$name %in% all] <- "white"
 
-plot(g,vertex.label.cex = .4)
-plot(g, layout=layout_in_circle, main="Circle")
-
-
-
-#brainstorm or search common words (fire blast, water spear, etc)
+#par(mar=c(0,0,0,0))
+plot(g, vertex.label.color = "black", # change color of labels
+     vertex.label.cex = .6, main = "Social Bending")
+#plot(g, layout=layout_with_fr, main="Force-directed")
+#plot(g, layout=layout_in_circle, main="Circle")
